@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profesionet Mjekësore – Shkolla Qemal Stafa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+    :root{--crimson:#c0392b;--navy:#1a2a4a;--sky:#2980b9;--gold:#d4a017;--light:#f4f7fb;--white:#fff;--dark:#111827;--muted:#6b7280;--border:#dde4ef}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Source Sans 3',sans-serif;background:var(--light);color:var(--dark);line-height:1.7}
+    header{background:linear-gradient(135deg,var(--navy) 0%,#243b6e 60%,var(--sky) 100%);color:#fff;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.35)}
+    .header-inner{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;gap:22px}
+    .logo-wrap img{height:76px;width:76px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 0 4px rgba(212,160,23,.25)}
+    .header-text h1{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;line-height:1.2}
+    .header-text p{font-size:.85rem;color:#b8ccf0;margin-top:2px;font-weight:300;letter-spacing:.8px;text-transform:uppercase}
+    nav{background:rgba(10,20,50,.92);backdrop-filter:blur(6px)}
+    nav ul{max-width:1200px;margin:0 auto;display:flex;list-style:none;padding:0 32px;gap:4px;overflow-x:auto}
+    nav ul li a{display:block;padding:11px 18px;color:#c8d9f5;text-decoration:none;font-size:.86rem;font-weight:600;letter-spacing:.5px;text-transform:uppercase;transition:color .2s,border-bottom .2s;border-bottom:2px solid transparent}
+    nav ul li a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+    .hero{background:linear-gradient(160deg,#0f1e40 0%,#1a4070 55%,#0e2a55 100%);color:#fff;text-align:center;padding:88px 24px 76px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(41,128,185,.35) 0%,transparent 70%);pointer-events:none}
+    .hero-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:.76rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:50px;margin-bottom:20px}
+    .hero h2{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,3.5rem);font-weight:900;max-width:780px;margin:0 auto 16px;line-height:1.15}
+    .hero h2 span{color:var(--gold)}
+    .hero p{font-size:1.05rem;max-width:600px;margin:0 auto 34px;color:#b8ccf0;font-weight:300}
+    .hero-btn{display:inline-block;background:var(--crimson);color:#fff;text-decoration:none;padding:13px 36px;border-radius:6px;font-weight:700;font-size:.97rem;letter-spacing:.4px;transition:background .2s,transform .15s;box-shadow:0 4px 18px rgba(192,57,43,.4)}
+    .hero-btn:hover{background:#a93226;transform:translateY(-2px)}
+    section{max-width:1200px;margin:0 auto;padding:68px 24px}
+    section+section{padding-top:0}
+    .section-label{text-transform:uppercase;font-size:.76rem;letter-spacing:2.5px;color:var(--sky);font-weight:700;margin-bottom:9px}
+    h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.65rem,3.5vw,2.4rem);color:var(--navy);margin-bottom:12px;line-height:1.2}
+    .title-underline{width:58px;height:4px;background:linear-gradient(90deg,var(--crimson),var(--sky));border-radius:2px;margin-bottom:38px}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:30px 24px;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s}
+    .card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(26,42,74,.13)}
+    .card-icon{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 16px}
+    .card-icon.red{background:#fdecea}.card-icon.blue{background:#e8f4fc}.card-icon.green{background:#eaf7ec}.card-icon.gold{background:#fdf6e4}
+    .card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:9px}
+    .card p{font-size:.88rem;color:var(--muted)}
+    .reasons-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+    .reason-item{display:flex;gap:16px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+    .reason-num{min-width:40px;height:40px;background:var(--navy);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.05rem}
+    .reason-item h4{font-size:.97rem;color:var(--navy);margin-bottom:4px;font-weight:700}
+    .reason-item p{font-size:.86rem;color:var(--muted)}
+    .programs-bg{background:var(--navy);padding:68px 0}
+    .programs-bg section{color:#fff}
+    .programs-bg .section-label{color:var(--gold)}
+    .programs-bg h2.section-title{color:#fff}
+    .tab-buttons{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:30px}
+    .tab-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#c8d9f5;padding:8px 20px;border-radius:6px;font-size:.87rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+    .tab-btn.active,.tab-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+    .tab-content{display:none}
+    .tab-content.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+    .prog-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:20px;transition:background .2s}
+    .prog-card:hover{background:rgba(255,255,255,.13)}
+    .prog-card h4{font-size:.97rem;color:var(--gold);margin-bottom:7px;font-weight:700}
+    .prog-card p{font-size:.83rem;color:#b0c4e0;margin-bottom:11px;line-height:1.5}
+    .prog-card .apply-btn{display:inline-block;background:var(--crimson);color:#fff;padding:6px 17px;border-radius:5px;font-size:.8rem;font-weight:700;cursor:pointer;border:none;transition:background .2s;text-decoration:none}
+    .prog-card .apply-btn:hover{background:#a93226}
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;align-items:center;justify-content:center;padding:22px}
+    .modal-overlay.open{display:flex}
+    .modal-box{background:#fff;border-radius:16px;max-width:630px;width:100%;padding:38px 34px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:popIn .25s ease}
+    @keyframes popIn{from{transform:scale(.88);opacity:0}to{transform:scale(1);opacity:1}}
+    .modal-close{position:absolute;top:14px;right:18px;font-size:1.55rem;cursor:pointer;color:var(--muted);line-height:1}
+    .modal-close:hover{color:var(--crimson)}
+    .modal-box h3{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--navy);margin-bottom:5px}
+    .modal-box .modal-univ{font-size:.83rem;color:var(--sky);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:18px}
+    .info-row{display:flex;gap:12px;border-top:1px solid var(--border);padding:11px 0;font-size:.88rem}
+    .info-row strong{min-width:155px;color:var(--navy);font-weight:700}
+    .info-row span{color:var(--dark)}
+    .modal-apply-btn{display:inline-block;margin-top:22px;background:var(--crimson);color:#fff;text-decoration:none;padding:11px 28px;border-radius:6px;font-weight:700;font-size:.93rem;transition:background .2s}
+    .modal-apply-btn:hover{background:#a93226}
+    footer{background:#0a1428;color:#8099c0;text-align:center;padding:34px 24px;font-size:.86rem}
+    footer strong{color:var(--gold)}
+    .divider{border:none;border-top:1px solid var(--border);margin:0}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMQEhUQEhMVFRUXGBgXGBgWFRUXFRIVFRYWFhcYGRcZHSggGholGxUVITEiJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGxAQGy0mICUtLi0tLSsyLS0vLS0tLS0tLS4tLy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLf/AABEIAOAA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwECAwUGBAj/xABCEAACAQEEBgcGAwYEBwAAAAABAgADBAURIQYSMUFRcQcTIjJhgbFScpGhwdE0kvAjQmKC4fEUJENTJTNjorLC0v/EABsBAQABBQEAAAAAAAAAAAAAAAAGAQIDBAUH/8QAOhEAAQIDAwgJAwMEAwAAAAAAAQACAwQRBSExEkFRYXGBscEGEyIyMzSRodFysvAUI1I1YsLhQnOi/9oADAMBAAIRAxEAPwCcYiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRJrr7vNbNTLnNjko4t9p7LRXWmpdjgoGJPhI3vi8mtNQ1DkBko4L9zCK+w31Wo1DUDa2scWU7G+xnc3Te1O0rihwYbVPeX+njI2ntuazVKlZRSJVhmWH7q7yftK0VSFJsS0DLjLpRUSIiESIiESIiESIiESJpL/t9WzKK6J1lNf8AmJsYL7anw3iZbmv6jalxpOMd6nJl8pbltysnOsxl4nVdaBVukZjoOjhrW2iIlywpERCJERCJES0sBvEIronne1UxtdR/MJjN5Uf91PzCVDXHMrS9oxK9kTxi8aJ/1U/MJlS1IdjqeTCC1wxCBzTgVniW4ic9pXfHVL1KHtsMz7C8eZlFctTpZfHWt1KHsKe0fbYbuQnPSkrLsFUK5FLEKBiScABvJkhaP3ULNTwObtmx8eA8BNTohc2H+ZqDM9wHcPa5mdZKFCkREoqJERCJERCJERCJERCLHVQMCpGIIwI4gyI9KLoaw2jGmSqti1Mg4FeK4+EmCanSO6VtdBqRyO1W9lwDgeUwTELrG3YjBdKy579LF7Xcdc753cKrjri09ZcEtI1h/uKO0PeXf5TvbDbqddQ9J1dTvBkIWiztTZqbjBlJBHiPpKUqzpmrMPFSR6TThzTmXOv4qQzdhQI/bhHJJ0Xg7s270U84znb+0spWU9WAalTeqnJfeO6cNdml1ppgrr9YuB7+bJwIP3mmZiSSTiTmSdpJ2mSOypVk20xH90GlNJUAt+JEs2KJcEFxFa6AcLtNxXXVtPq57tOmvMkzwVdMrY376r7qD6zQRJC2Rlm4MHHiou6fmXYvPDgtlVv+1Ntrv5HD0nhqWh27zsebE/WY5WZ2w2NwAG4LWdEe7vOJ2kq3CMJdKTJUqygVNUQBLpSL0oFmpWyondqMvJ2+8ue3VGOszkk7STiTMETE6Ex3eaDtAWRsWI3uuI2E/K9AtzfrCZEvEgglccCD4ZTxSswOkJZ2LBw4LZbaE03CId9/GqlbRvSGna11e7UUZp9V4ib6QfY7U1F1qocGU4j7cjJgua8ltNJaq79o9lt4nAtCSEu4FndPsdCkFmzxmWkP7w9xp9VsIiJzl00iIhEiIhEiIhEiIhEiIhFGfSXYNWslcDssuqT/ABLifmPSabRm+FszMlVA9GpgHGGJHBhJVvi7EtVJqNQZHYd6ncR4iRNfWj9eyMQ6lk3VFGKkePAznR4bmPy2/m1S2ypqDMy/6WLiLhmqK3EHSOQxV992ajTq42eoHpuhYDHOnmMVM8MxUN/I/SXyY9HzWTr/AHOXnnTJhZahaSTRjLzjhn/NarESs7aiySnw85Qthmcz6S1mx/vOJPW3BlyWMGU72G0/ClVj9EpufaIsQ9XDOBIq4jSG3XayRqBV+I58sPvLcR7TfKWymfCcGJ0gnCbiBu+VNYPQezGijg950lxHs3JWQEePy+sZcfmJj8pcDhKwukE209rJcNlOCtmOg1mvFIeWw6Qa+zq8RtV4lZjVyPtn6S8HHxkikLXgzZyO67Qc+w4HjqUEtnozN2YOsd24f8hm+oYjbUjWkSspOso6qTq9GLzNmZSe42AcejeU5Sbih3FnHtrw2beRXbsPxX7OalwHHMS6c7odePWUzSY9qnkPFN3w2TopHFJEiIhEiIhEiIhEiIhEiIhEljoCMCMR4y+IRR7p7ctOkFtFMBC3YZQMFbHPHDcZxkkfpJ/Dp749DI4koshoEtdpKi1tvc+a7RrRoG5UlWOHP08PCAcM/DLnumMmaluWg6XYIUM9p2fQPk4BdvojYbZ6MZiOKw2Zszna9QxIzmmaqtm4uHR2tbD2RqoNrtjq8hxMz6J6Pm2VMWxFNO8faPsj6yVbPQWmoRAFVRgANgEiUGBl3nDj/pegWpa36Y9VCvfn0DdnOpc/dehdmpAFlNVuL7PJdk3lOwUlGC00A8EX7TmNJ+km77ATTqVteoNqUxrsDwOGQ85yqdOFJyTTsNpdeIC/TGbzWNGAUUjTMaMaxHE71J1e66LjB6VM81E5y9tBKLgmiTSbhtQ+W6am6OmS7q7BKpqWdv8AqrkD4sMQJ3SXnRaka61EamFLFlYFcAMdso6G12IV0CcjwDWG8jh6YKHr0uyrZn6uouqdx2qw4gzyA/CSndtpoXzYlrFCEqa2rjhrLqkgMDuOWMjm+brey1WpNuzB3Ou4zRiwjDII9dCltnWiydYYcQDKpeMxGe7iF5gcfrKzGjfrwOGMvJ+8mtkT5moNH95tx16Dv4ry7pNYos2a/b8N9S3VTFu7NpFNCoZuKHcWaczcUO4sttrw2beRWtYfiv2c1s7gtvU10fcTqtyb+uEkuRKZJVx2nraFN9+GB5jIyPFSUrYRESiokREIkREIkREIkREIkREIuR6Sfw6e+PQyOJI/ST+HT3x6GRvJTZPlhtKidsea3BHOQHn8cRLFBOQzJyHiTsl1Td+uM2GjNEVLXQU7NcH8px+kh9qxDFnX7ckbrl6x0chNlbHhGn/EvO09r/WxSno9dws1BKQ2gYseLHaZGnTbp+9l/wCH2VtWqy61Vxtpo2xQdzHb4DDjJfnyJ0k1me9baW29c6+SnVX5ATO0ACgUVe9z3F7sSaneut6E9CqV41alqtI16dIgBDsqVD2u1xAHrPoahY6aDVSmigZYBQB8p81dEOna3XWelXx/w9YjWI203GQbDeMMjPpSw22nXQVaTq6NmGUggwrVqNItDbFb0KV6CE7nUBXU8Qwnzx0haF2m531BUd7LUx1GBIBPsOoy1vWfU80WmlxJeFjrWZxjrKSp3q6jFSPHGEWi6FWxuiz/AM4/72nu6QLrFWz9aB26WfNDiGH1mv6FKbLdNJGGDK9ZSDuIqsJ2dtoh6bpxVh8QRLXtymkLPLRzAjNiNzH2z+yg8ZS8HL5fKWFcDhwxHwylymX2DFLJsNzOBHPku301lxFssvzsc0jeck+xVTNxQ7izTmbmiMFXHgJIba8Nu3kV5zYfiv2c1fOz0Gr40nTHutj5MMZxk6TQaphVqLxUH4EyPlSYrtoiJarUiIhEiIhEiIhEiIhEiIhFyPST+HT3x6GRvJI6Sfw6e+PQyN5KbJ8sNpUTtjzJ2BW1N83Ghn42jzPoZp6m+bjQz8bR5n0MhU15x/1nivXZH+iw/wDpH2KYJ849O2ij2e2G3IpNGvgWI2JVAwIPDWwBHjjPo6eO87upWqk1Csgem4wZTsP9ZuKHL4qm70c0qtd3tr2asycV2o3NTlO9046GrRZi1aw416WZ6v8A1UHAe2B8eciytSZGKOpVhkQwIIPAg7JVFO+ifTlSqYU7fS6ptnW08WQ+LLtXyxktXdeFK0oKtGotRDsZCCD8J8Uze6LaV2q7agq2aoVGPaQ506ngy/XbFEX2CiAZAAcpV9hnMaBaZUr2s/XINWouVSnjmjeHFTuM6d9hlEUF2jvN7zepinsPL7RaO83vN6mKe/lMNjedh7/tKlfSr+jxtjfuahm/rDDU9xPSaAzfVWxC+4g+Akotnw2beRXmFheK/YOKtm/0J/EH3D6iaCb/AEJH+Yb3D6iR8qTFd3ERLVakREIkREIkREIkREIkREIuR6Sfw6e+PQyN5JHST+HT3x6GRvJTZPlhtKidseaOwK2pvm40M/G0eZ9DNRUGz9cZ79G7QKdqoudmuAf5jh9ZC50ZM7Er/M8V67Zn7liwsnPCH20U0Tm9FNKBbqtro6mo1mrtSI1tbXUd19gwxwbLwnRifOtx6WC7NILW1Q4UaterTqfw41Dqv5H5EzbUOX0XOd0l0LsV4jC0UFLYYB17NReTD6zfU3DAMCCCMQRmCDsIMyQi+c9Nehq0WQNWsjG0UhmVIwrKOQyby+EiwjDI/wBp9vz5p6eLjpWW3rUpAKK6a7KNgcHAnDdjl85UFF5ehG9ms96UqYPYrhqbDd3SynniuHmZ9PPsM+YuhC6GtF6U6gHYoBqjHdiVKqOeLY/ymfS1vqhKbv7KsfgJRVAJNAoStHeb3m9TFPYeX2ljNiceOfxzl6/r5THYrazsPf8AaVKelrgyx4tf7R/7ak3FDurNPNxZ+4vKSe2vDZt5FeY2F4r9nNZJ02gtLGpVfgqj4kmczO30JoatFn9pj8BlI8VJiujiIlqtSIiESIiESIiESIiESIiEXI9JP4dPfHoZHMkbpJ/Dp749DI4kpsnyw2lRS2PNHYFR1y+H1MsB4bd3OZPDw+cxsMDhz9cJHOkEqYcfrgLncR8hehdCLRbGkzKuPahm76Saj0cSDuUxaNXkLVZ0qfvd1xwYZH7z5k0nuavbL2ttKz0nqv19U4IMcBrnadgkpaL381jq7zTbJ1/9h4iSPcF3Wan1losyr/mGNV3GZdmzOJ+k04MXLbrWO05AysUkDsHD43cFCuienNvuQCy3jZqrWcZKWBD0hwVtjDwJkqXV0k3ZaFDLaqaH2ah1GHkZ1NooJUGq6qw4MAR8DOWt3RrddY6zWOmD/BimP5ZmXMWG/Ok+7LKhb/ELVYbEpdpifQechC3UrdpLbjWp0jqnBVJxFKjTGOGLbztJ35ydLH0Z3XSOIsdMn+PF/wDyM6mzWZKS6lNVRRuUAD4CEXPaBaHUrps/Up2qjdqrUIzdvoo3CYOkK9BTodSp7dXb4IMcT9JvL7venZaZqVD7q73PASIr1vF7TVatU2tsG5V3KJrzETJGTnXbsaRdGiiM4dlvucw3Z/TFeYDGXjZ8D8RhLUGP15AjGXmdfo7KnKdHP0jn8Lm9O7Sbkw5Jpvrlu1Yho33n0VJuLP3F5TTzcWfuLynUtrw2beRUSsLxX7Oayctv1knXVZeqopT4KMee+cNozYeutC4jsp2z5bB8fSSLI6VJSkREoqJERCJERCJERCJERCJETVX/AHqLNTxGbtko8eJ8BCLmukW8FKrQXMhgzfw5ZDnOEmzvRyw1icSWxJ4kzWyU2T5YbSopbHmjsCpBGOQ24fEDdEpNuZlocxDMOILj+VWtIzsaSjtmIJo5vuM4Oo51imzuW/K1kbGm3ZO1DmrfY+M8Rz8Dx/8AqWFcPH0kFnbMjybqm9v8hz0cNa9fsq35G1ofVuoHnFjv8a94aCLxoCkq69OrPUAFTGk3iMV+Im9o3zZ37temf5x9ZC5GEp5TWbNP2rNF6PS7j2SW6seN6mavf9lpjFq9PyYE/Kc5e2nyKCtBC59pslHltMjwSvISjpl5GhVg2BLsNXEu9h6D5Xot9vqWh+sqsWPyUcANwnnVeEKmPLzEyfrPaZvyFkRpp2U+rWaTidnzgtC2ek8pZzDCgUfEFwaO636iLhT+Iv2Ypsy+Pj/SViUk4hQmQmBjBQDALyKPHiTEV0WKaucak6/y4aBcqTcUO4s086/Q+xrWqKGYdgBtXHNuGXCcq2vDZt5FdawvFf8ATzC6zRa7eoo4sO2/abw4DyHrN3ESOqSJERCJERCJERCJERCJERCLBbLStJGqOcFUYmRtelva0VDUbko9ldwmy0ovjr36tD+zQ/nYb+QmjlQFUBYrTT1lI37RNTN3MFeyhs9hnVs6fbAqyJ3TfXQVyLUs50ciJD7wFKaR8/mZauJlq2dl2jLjumOSNj2vblNNRqUZiQ3Q3ZLxQ60lMIj9eUuWMqmXD5CMuDfL7TrbTdtnJsVJAUWrrFmbvMu4E7sSPnM1osevRtAqWVaC0geqcDBiQcgT+9jlOLEhyUQhzoIv2A97JwBFb8wqpJAnbVgAthzLgBrJHdyqXg0FNK4zLg3wEA4f2E6q4q1Cqr02syCmlMs9UnFg2GRx3YnYJdctiKWQVVs6V3ZmJDkYqgGWA245S9sOUlyaQgCCBfTPrOFw4LHFnLRm2gRJlzmkE4updTMKVv2i4rlZSZLTU12ZtULicdUbF8BMc6wNcVwKAXBJWJsbnuSranCIMBvbco/W6WRYzIQynmg1rJCgviuyYYqdS1hIG3hKUrW6OKqMVYZgjdnjhy8JKNn0Nsy0mpMpYttc94EbCvCcFpHo5VsbZ9ume649G4GQu3Jx0wW5Hcbx0+mC9N6GycCVEQRD+6+6mbJGYaSTjupWi7/RPSdLYuq2C1gM13MPaXwnSSBLPXamwdGKspxBG0GSlojpQtrXq3wWsNo3OPaX7TRl5jK7LseK3LWskwKxYI7Gcfx+Rwz6V1MRE21wUiIhEiIhEiIhEnMaW3z1Y6ime0w7RH7qndzM2l+XmLNTLbWOSjifsJHVWoXYsxxYnEniYCK2Im80Wufr36xx+zQ/nbhyEuVy0cTub20Wp1cWp/s28O6eY3eU5S8LmrUO+hI9pcx/SKpVeGeetY1bMZGegGJkhRXwnZTDQrFGgQ4zcmIKj8z4jctVVs7LtGXHdMJE3c89axq2zI/KdqWtgYRhvHMfmxcGasR15gmuo47jh6+qz35bKdetSVX1aaU1XXwPZI7xw27ZW973DqLNSZurxBZ3JLORvI3KOE1Vazsu0ZcZgnRhQoT2tLTUDDOK6dvDQuZGixWue14oXY5jTRs159K6i3vZRZhRpWg5DWZRTONZ92sTu8Jjux7LZnW0i0M7KMqYQgliMMCdmrjObnppWNjmch+t0xRIUOFDIfEIBrWtL64jBZIUaJGiAw4YLhSlK3UwxNBvWCo+sS28kn4nGZ6VkZszkOM3t1aPVamGohw9t8h5TsLq0XpUsGqftH8e6OQ+850xa57sEU1nkPn0XSlrFHejmuocz8eq5e4dF2rYMQVT2iO03uj6zv7FY0oqEQYD5k8Sd5npicd8Rz3ZTzU6124cNkNuSwADUkw2igtRSjqGU5EEYgzNEsV6i/SnQ5qGNagC9PaV2tT5cVnKUahQh0YqwOII2gyeiJw+lehQqY1rMAr7Wp7FfxHBpoRpWnaZ6fClFm23WkKZOoO5O+fXSvbohpULUBSqYLWHwqDiPHiJ1kgU61Nv3kdTyYMPSSdoRpI1rU06o/aoASRsdTkDz4y+XmMrsux/Pda9rWT1NY8Hu5xoro1cNi6yIibij6REQiREQijbSG01KldutUqRkqncvhxx4zXSTLzuynaF1XGe5h3lPgZwt6XLVoOFwLhjgrAd4nYDwMqCqgrz3Xd7WioKa82PsrvMkmyWZaSLTQYKowE8NwXULNTw2u2bHx4chNrKKiShErEItZbLjoVc2pgHivZPymntOhq/6dVh4MAfmMJ1cQi4SrojXGxqbeZEwHRe1ewv5xJCiEUejRi1ewvm4ly6EVGzYovIk+kkCJeyI9hqwkbFZEhsiCj2g7RVchY9Bqa5u7H3QB8zjN7Y7koUs1pjHi3aPxM2USj3uecpxqdaqxjWDJaABqSIiWq5IiIRIiIRIiIRc7pJotStg1h+zqjY4G3wYbxMWiei/wDgS7s+uzADIYBQNwE6eJj6pmVl0vW0J2P1PUZXY0cq401JERMi1UiIhEiIhElCJWIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRIiIRf//Z" alt="Logo Qemal Stafa">
+    </div>
+    <div class="header-text">
+      <h1>Gjimnazi "Qemal Stafa"</h1>
+      <p>Edukim karriere</p>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#profesionet">Profesionet</a></li>
+      <li><a href="#arsye">Pse Mjekësia?</a></li>
+      <li><a href="#programet">Programet</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Viti Akademik 2026</div>
+  <h2>Zgjidh <span>mjekësinë</span> —<br>Ndërto të ardhmen</h2>
+  <p>Shiko programet universitare në Shqipëri dhe Europë, mëso pse profesionet mjekësore janë ndër profesionet me ndikimin më të madh në botë.</p>
+  <a href="#programet" class="hero-btn">Shiko Programet →</a>
+</div>
+
+<section id="profesionet">
+  <p class="section-label">Fushat Kryesore</p>
+  <h2 class="section-title">Profesionet Mjekësore</h2>
+  <div class="title-underline"></div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon red">🩺</div>
+      <h3>Mjeku i Përgjithshëm</h3>
+      <p>Diagnostifikon dhe trajton sëmundje të ndryshme, kujdeset për shëndetin e pacientëve dhe i referon te specialistët kur nevojitet. Është shtylla kryesore e sistemit shëndetësor.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon blue">💊</div>
+      <h3>Farmacisti</h3>
+      <p>Ekspert i barnave dhe trajtimeve farmakologjike. Siguron cilësinë dhe sigurinë e barnave, këshillon pacientët dhe bashkëpunon me mjekët për terapinë optimale.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon green">🦷</div>
+      <h3>Stomatologu</h3>
+      <p>Specialisti i shëndetit oral. Diagnostifikon dhe trajton problemet e dhëmbëve dhe gojës, nga kariesi tek kirurgjia orale dhe ortodontia.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon gold">🏋️</div>
+      <h3>Fizioterapisti</h3>
+      <p>Ndihmon pacientët të rikuperojnë lëvizjen dhe funksionin pas lëndimeve, operacioneve ose sëmundjeve kronike nëpërmjet teknikave të rehabilitimit fizik.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="arsye">
+  <p class="section-label">Motivimi</p>
+  <h2 class="section-title">Pse të zgjedhësh mjekësinë?</h2>
+  <div class="title-underline"></div>
+  <div class="reasons-grid">
+    <div class="reason-item">
+      <div class="reason-num">1</div>
+      <div><h4>Ndikim i drejtpërdrejtë në jetë</h4><p>Çdo ditë shpëton jetë, largon dhimbje dhe rikthen shpresën. Asnjë profesion tjetër nuk ju jep mundësi kaq të drejtpërdrejtë për të ndikuar pozitivisht te njerëzit.</p></div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">2</div>
+      <div><h4>Siguri e Lartë Pune</h4><p>Profesionistët mjekësorë janë të kërkuar kudo në botë. Sipas statistikave europiane, kërkesa për mjekë dhe farmacistë rritet me 15–20% çdo dekadë.</p></div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">3</div>
+      <div><h4>Karrierë Ndërkombëtare</h4><p>Diploma mjekësore e njohur në BE hap dyert e punësimit në gjithë Europën — Gjermani, Itali, Francë, Mbretëri e Bashkuar dhe shumë vende të tjera.</p></div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">4</div>
+      <div><h4>Pagë e Lartë dhe Respekt</h4><p>Mjekët dhe specialistët shëndetësorë janë ndër profesionet më të pagura dhe më të respektuara në shoqëri, si në Shqipëri ashtu edhe jashtë saj.</p></div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">5</div>
+      <div><h4>Zhvillim i Vazhdueshëm</h4><p>Mjekësia është shkencë gjithmonë në zhvillim. Do të mësosh gjatë gjithë karrierës, duke qëndruar në ballë të inovacionit dhe teknologjisë shëndetësore.</p></div>
+    </div>
+    <div class="reason-item">
+      <div class="reason-num">6</div>
+      <div><h4>Diversitet i Madh Specializimesh</h4><p>Nga pediatria, kardiologjia, neurologjia, deri te mjekësia estetike — specializimi i duhur të lejon të ndërtosh karrierën sipas pasionit tënd.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="programs-bg" id="programet">
+  <section>
+    <p class="section-label">Viti Akademik 2026</p>
+    <h2 class="section-title">Programet e Studimit</h2>
+    <div class="title-underline" style="background:linear-gradient(90deg,var(--gold),var(--sky))"></div>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab(event,'albania')">🇦🇱 Shqipëri</button>
+      <button class="tab-btn" onclick="showTab(event,'germany')">🇩🇪 Gjermani</button>
+      <button class="tab-btn" onclick="showTab(event,'italy')">🇮🇹 Itali</button>
+      <button class="tab-btn" onclick="showTab(event,'france')">🇫🇷 Francë</button>
+      <button class="tab-btn" onclick="showTab(event,'czechia')">🇨🇿 Çeki</button>
+    </div>
+
+    <div class="tab-content active" id="tab-albania">
+      <div class="prog-card"><h4>MSc Mjekësi e Përgjithshme</h4><p>Universiteti i Mjekësisë, Tiranë. Program 6-vjeçar i integruar me regjistrim nëpërmjet platformës kombëtare.</p><button class="apply-btn" onclick="openModal('umt-mjekesi')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>MSc Farmaci</h4><p>Universiteti i Mjekësisë, Tiranë. Program 5-vjeçar. Trajnim klinik dhe laboratorik me fokus në farmakologji.</p><button class="apply-btn" onclick="openModal('umt-farmaci')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Mjekësi Dentare (Stomatologji)</h4><p>Fakulteti i Mjekësisë Dentare, UMT. Program 5-vjeçar. Mundësi specializimesh afatgjata pas diplomimit.</p><button class="apply-btn" onclick="openModal('umt-stomatologji')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Fizioterapi (Bachelor + Master)</h4><p>Universiteti i Mjekësisë, Tiranë. Program 3+2 vjeçar. Fokus mbi rehabilitimin dhe fizioterapinë neurologjike.</p><button class="apply-btn" onclick="openModal('umt-fizioterapi')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Shëndet Publik (Master)</h4><p>UMT — Master i Shkencave. Menaxhim dhe politikë shëndetësore, epidemiologji dhe shëndet komunitar.</p><button class="apply-btn" onclick="openModal('umt-shendetpublik')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Specializime Afatgjata në Mjekësi</h4><p>UMT — Pas diplomimit. Kardiologji, neurologji, pediatri, ortopedi, psikiatri dhe fusha të tjera.</p><button class="apply-btn" onclick="openModal('umt-specializime')">Informacion Aplikimi</button></div>
+    </div>
+
+    <div class="tab-content" id="tab-germany">
+      <div class="prog-card"><h4>Humanmedizin – Charité Berlin</h4><p>Njëra nga universitetet mjekësore më të njohura në Europë. Program 6-vjeçar gjermanisht. Kërkesa: DSH-2 ose C1.</p><button class="apply-btn" onclick="openModal('de-charite')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Pharmazie – LMU München</h4><p>Ludwig Maximilian Universität. Program 4-vjeçar + 6 muaj praktikë. Niveli gjuhësor C1 gjermanisht e detyrueshme.</p><button class="apply-btn" onclick="openModal('de-lmu-farmaci')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Zahnmedizin – Heidelberg</h4><p>Universität Heidelberg. Program 5.5-vjeçar. Njohuri gjermanishte C1. Aplikim nëpërmjet hochschulstart.de.</p><button class="apply-btn" onclick="openModal('de-heidelberg-stom')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Physiotherapie – DHBW Stuttgart</h4><p>Duale Hochschule Baden-Württemberg. Program 3-vjeçar dual me praktikë të integruar dhe pagë gjatë studimit.</p><button class="apply-btn" onclick="openModal('de-dhbw-fizioterapi')">Informacion Aplikimi</button></div>
+    </div>
+
+    <div class="tab-content" id="tab-italy">
+      <div class="prog-card"><h4>Medicina e Chirurgia – Bologna</h4><p>Universiteti më i vjetër i botës. Program 6-vjeçar. Regjistrim nëpërmjet testit IMAT (anglisht) ose testit italisht.</p><button class="apply-btn" onclick="openModal('it-bologna-mjekesi')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Farmacia – Sapienza Roma</h4><p>Università La Sapienza. Program 5-vjeçar. Test i pranimit në gjuhën italiane. Bursa disponueshme.</p><button class="apply-btn" onclick="openModal('it-sapienza-farmaci')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Odontoiatria – Uni Milano</h4><p>Università degli Studi di Milano. Program 5-vjeçar. Regjistrim nëpërmjet testit kombëtar TOLC-MED.</p><button class="apply-btn" onclick="openModal('it-milano-stom')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Fisioterapia – Università di Padova</h4><p>Program 3-vjeçar Bachelor. Test i pranimit i detyrueshëm. Aftësi italiane B2 e kërkuar për studentë të huaj.</p><button class="apply-btn" onclick="openModal('it-padova-fizioterapi')">Informacion Aplikimi</button></div>
+    </div>
+
+    <div class="tab-content" id="tab-france">
+      <div class="prog-card"><h4>Médecine – Université Paris Cité</h4><p>Program 9-vjeçar (PASS + 3 cikle). Regjistrim nëpërmjet Parcoursup. Njohje franceze B2–C1.</p><button class="apply-btn" onclick="openModal('fr-paris-mjekesi')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Pharmacie – Université de Lyon</h4><p>Université Claude Bernard Lyon 1. Program 6-vjeçar. Regjistrim nëpërmjet Parcoursup. Bursa Erasmus disponueshme.</p><button class="apply-btn" onclick="openModal('fr-lyon-farmaci')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Kinésithérapie – IFMK Paris</h4><p>Institut de Formation en Masso-Kinésithérapie. Program 4-vjeçar. Test i pranimit PACES ose Parcoursup.</p><button class="apply-btn" onclick="openModal('fr-ifmk-fizioterapi')">Informacion Aplikimi</button></div>
+    </div>
+
+    <div class="tab-content" id="tab-czechia">
+      <div class="prog-card"><h4>General Medicine – Charles University Prague</h4><p>Njëra nga universitetet mjekësore më të mira të Europës Qendrore. Program 6-vjeçar anglisht. Tarifë: ~14 000 EUR/vit.</p><button class="apply-btn" onclick="openModal('cz-charles-mjekesi')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Dentistry – Masaryk University Brno</h4><p>Program 5-vjeçar anglisht. Kostoja: ~11 000 EUR/vit. Aplikim online, test hyrës dhe intervistë.</p><button class="apply-btn" onclick="openModal('cz-masaryk-stom')">Informacion Aplikimi</button></div>
+      <div class="prog-card"><h4>Pharmacy – Charles University</h4><p>Program 5-vjeçar anglisht. Regjistrim online. Gjuhë angleze C1. Tarifë: ~12 000 EUR/vit.</p><button class="apply-btn" onclick="openModal('cz-charles-farmaci')">Informacion Aplikimi</button></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>© 2026 <strong>Gjimnazi "Qemal Stafa"</strong> · Të gjitha të drejtat e rezervuara </p>
+</footer>
+
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <span class="modal-close" onclick="closeModalDirect()">✕</span>
+    <h3 id="modal-title"></h3>
+    <p class="modal-univ" id="modal-univ"></p>
+    <div class="info-row"><strong>Kohëzgjatja</strong><span id="modal-duration"></span></div>
+    <div class="info-row"><strong>Gjuha e Mësimit</strong><span id="modal-lang"></span></div>
+    <div class="info-row"><strong>Kriter Hyrës</strong><span id="modal-req"></span></div>
+    <div class="info-row"><strong>Afati i Aplikimit</strong><span id="modal-deadline"></span></div>
+    <div class="info-row"><strong>Dokumentet</strong><span id="modal-docs"></span></div>
+    <div class="info-row"><strong>Tarifa / Bursa</strong><span id="modal-fee"></span></div>
+    <div class="info-row"><strong>Platforma</strong><span id="modal-platform"></span></div>
+    <a href="#" id="modal-link" class="modal-apply-btn" target="_blank">Apliko / Informacion Zyrtar →</a>
+  </div>
+</div>
+
+<script>
+const LOGO_DATA = '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';
+document.querySelector('.logo-wrap img').src = 'data:image/jpeg;base64,' + LOGO_DATA;
+
+function showTab(e,id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  e.target.classList.add('active');
+}
+
+const programs={
+  'umt-mjekesi':{title:'MSc Mjekësi e Përgjithshme',univ:'Universiteti i Mjekësisë, Tiranë (UMT)',duration:'6 vjet (program i integruar)',lang:'Shqip',req:'Matura shtetërore, nota mesatare e lartë, test biologjie dhe kimie',deadline:'Shtator 2026 (sipas kalendarit të MAS)',docs:'Dëftesë maturë, letër motivimi, dokument identiteti, foto',fee:'Publik: ~150 000 ALL/vit; Bursa disponueshme',platform:'admisionet.al',link:'https://umed.edu.al'},
+  'umt-farmaci':{title:'MSc Farmaci',univ:'Universiteti i Mjekësisë, Tiranë (UMT)',duration:'5 vjet',lang:'Shqip',req:'Matura shtetërore, kimi dhe biologji. Konkurrencë e lartë',deadline:'Shtator 2026',docs:'Dëftesë maturë, certifikatë lindjeje, foto, pagesa e tarifës',fee:'~130 000 ALL/vit; Bursa MAS disponueshme',platform:'admisionet.al',link:'https://umed.edu.al'},
+  'umt-stomatologji':{title:'Mjekësi Dentare (Stomatologji)',univ:'Fakulteti i Mjekësisë Dentare – UMT',duration:'5 vjet',lang:'Shqip',req:'Matura, biologji, kimi, shëndet i mirë fizik dhe manual',deadline:'Shtator 2026',docs:'Dëftesë, certifikatë lindjeje, foto, certifikatë shëndetësore',fee:'~150 000 ALL/vit',platform:'admisionet.al',link:'https://fmd.edu.al'},
+  'umt-fizioterapi':{title:'Fizioterapi (Bachelor + Master)',univ:'Universiteti i Mjekësisë, Tiranë',duration:'3 vjet Bachelor + 2 vjet Master',lang:'Shqip',req:'Matura, biologji. Intervistë motivimi për programin Master',deadline:'Tetor 2026 (Bachelor); Nëntor (Master)',docs:'Dëftesë, transkriptë notash, letër motivimi',fee:'~100 000 ALL/vit',platform:'admisionet.al',link:'https://umed.edu.al'},
+  'umt-shendetpublik':{title:'Master i Shkencave – Shëndet Publik',univ:'Universiteti i Mjekësisë, Tiranë',duration:'2 vjet Master profesional',lang:'Shqip',req:'Diplomë Bachelor në fushën e shëndetit ose shkencave natyrore',deadline:'Tetor 2026',docs:'Diplomë, transkriptë, CV, letër motivimi',fee:'~120 000 ALL/vit',platform:'admisionet.al',link:'https://umed.edu.al'},
+  'umt-specializime':{title:'Specializime Afatgjata në Mjekësi',univ:'Universiteti i Mjekësisë, Tiranë',duration:'3–6 vjet (sipas specialitetit)',lang:'Shqip',req:'Diplomë mjekësie, test konkurrimi, notë mesatare ≥ 8',deadline:'Prill–Maj 2026',docs:'Diplomë, transkriptë, licencë ushtrimi, letër motivimi, CV',fee:'Vende buxhetore dhe me tarifë',platform:'fakultetimjekesise.edu.al',link:'https://www.fakultetimjekesise.edu.al'},
+  'de-charite':{title:'Humanmedizin – Mjekësi',univ:'Charité – Universitätsmedizin Berlin',duration:'6 vjet',lang:'Gjermanisht (C1)',req:'Abitur/ekuivalent, TestAS, DSH-2 ose C1, MedAT ose TMS',deadline:'Janar 2026 (verë); Korrik 2026 (dimër)',docs:'Dëftesë, certifikatë gjuhe, TestAS, letër motivimi, CV',fee:'Pa tarifë mësimi (~350 EUR/semestër); Bursa DAAD',platform:'hochschulstart.de / uni-assist.de',link:'https://www.charite.de'},
+  'de-lmu-farmaci':{title:'Pharmazie – Farmaci',univ:'Ludwig Maximilian Universität München',duration:'4 vjet + 6 muaj praktikë',lang:'Gjermanisht (C1)',req:'Abitur/ekuivalent me kimi të avancuar, C1 gjermanisht',deadline:'Korrik 15, 2026',docs:'Certifikata shkollorë, certifikatë gjuhe C1, CV, foto',fee:'Pa tarifë; Bursa BAföG dhe DAAD',platform:'lmu.de / uni-assist.de',link:'https://www.lmu.de'},
+  'de-heidelberg-stom':{title:'Zahnmedizin – Stomatologji',univ:'Universität Heidelberg',duration:'5 vjet e 6 muaj',lang:'Gjermanisht (C1)',req:'Abitur me nota shumë të larta; C1 gjermanisht; shkathtësi manuale',deadline:'Korrik 2026',docs:'Dëftesë, certifikatë gjuhe, letër motivimi',fee:'~160 EUR/semestër; Bursa DeutschlandStipendium',platform:'hochschulstart.de',link:'https://www.uni-heidelberg.de'},
+  'de-dhbw-fizioterapi':{title:'Physiotherapie – Fizioterapi',univ:'DHBW Stuttgart',duration:'3 vjet (dual)',lang:'Gjermanisht (B2–C1)',req:'Kontratë me partner klinik, B2 gjermanisht, shëndet i mirë fizik',deadline:'Mars 2026',docs:'Kontratë praktike, dëftesë, certifikatë gjuhe, CV',fee:'Pa tarifë + pagë gjatë praktikës (~800 EUR/muaj)',platform:'dhbw-stuttgart.de',link:'https://www.dhbw-stuttgart.de'},
+  'it-bologna-mjekesi':{title:'Medicina e Chirurgia',univ:'Alma Mater Studiorum – Università di Bologna',duration:'6 vjet',lang:'Italisht ose Anglisht',req:'Test IMAT (anglisht) ose test italisht; diploma e barasvlershme',deadline:'Gusht 2026 (IMAT)',docs:'Dëftesë e legalizuar, deklaratë vlere (DVN), foto, formular online',fee:'~2 700 EUR/vit; Bursa ER.GO',platform:'universitaly.it / studenti.unibo.it',link:'https://www.unibo.it'},
+  'it-sapienza-farmaci':{title:'Farmacia – Farmaci',univ:'Università degli Studi di Roma "La Sapienza"',duration:'5 vjet',lang:'Italisht (B2)',req:'Test TOLC-F ose test i brendshëm; B2 italisht',deadline:'Shtator 2026',docs:'Dëftesë, certifikatë gjuhe, foto, formular Sapienza',fee:'~1 000–3 000 EUR/vit; Bursa DSU Lazio',platform:'universitaly.it / uniroma1.it',link:'https://www.uniroma1.it'},
+  'it-milano-stom':{title:'Odontoiatria – Stomatologji',univ:'Università degli Studi di Milano',duration:'5 vjet',lang:'Italisht (B2)',req:'Test TOLC-MED; B2 italisht; shkathtësi manuale',deadline:'Gusht–Shtator 2026',docs:'Dëftesë legalizuar, certifikatë gjuhe, DVN, foto',fee:'~1 500–4 000 EUR/vit; Bursa EDiSU',platform:'universitaly.it / unimi.it',link:'https://www.unimi.it'},
+  'it-padova-fizioterapi':{title:'Fisioterapia – Fizioterapi',univ:'Università degli Studi di Padova',duration:'3 vjet Bachelor',lang:'Italisht (B2)',req:'Test i pranimit TOLC; B2 italisht; shëndet i mirë fizik',deadline:'Shtator 2026',docs:'Dëftesë, certifikatë gjuhe, DVN, formular universiteti',fee:'~1 200–2 500 EUR/vit; Bursa ESU Padova',platform:'universitaly.it / unipd.it',link:'https://www.unipd.it'},
+  'fr-paris-mjekesi':{title:'Médecine – Mjekësi',univ:'Université Paris Cité',duration:'9 vjet (PASS + 3 cikle)',lang:'Frëngjisht (B2–C1)',req:'Baccalauréat ose ekuivalent; B2–C1 frëngjisht; konkurrencë shumë e lartë',deadline:'Janar–Mars 2026 (Parcoursup)',docs:'Baccalauréat, notat e 3 viteve të fundit, letër motivimi, CV',fee:'~170 EUR/vit (publik); Bursa CROUS',platform:'parcoursup.fr',link:'https://u-paris.fr'},
+  'fr-lyon-farmaci':{title:'Pharmacie – Farmaci',univ:'Université Claude Bernard Lyon 1',duration:'6 vjet',lang:'Frëngjisht (B2)',req:'Baccalauréat shkencor; B2 frëngjisht; kalim i PASS/LAS',deadline:'Janar–Mars 2026 (Parcoursup)',docs:'Dëftesë, transkriptë, letër motivimi',fee:'~170 EUR/vit; Bursa Erasmus dhe CROUS',platform:'parcoursup.fr / univ-lyon1.fr',link:'https://www.univ-lyon1.fr'},
+  'fr-ifmk-fizioterapi':{title:'Kinésithérapie – Fizioterapi',univ:'IFMK Paris',duration:'4 vjet',lang:'Frëngjisht (B2)',req:'PACES ose L1 biologji; B2 frëngjisht; test hyrës dhe intervistë',deadline:'Mars–Prill 2026',docs:'Dëftesë, letër motivimi, CV, certifikatë gjuhe',fee:'~8 000 EUR/vit; Bursa rajonale disponueshme',platform:'parcoursup.fr',link:'https://www.ifmk-paris.fr'},
+  'cz-charles-mjekesi':{title:'General Medicine (anglisht)',univ:'Charles University Prague – 1st Faculty of Medicine',duration:'6 vjet',lang:'Anglisht (C1)',req:'Dëftesë, C1 anglisht, test hyrës biologji–kimi–fizikë online',deadline:'Shkurt 28, 2026',docs:'Dëftesë e apostiluar, IELTS ≥7 / TOEFL ≥100, foto, CV',fee:'~14 000 EUR/vit',platform:'lf1.cuni.cz',link:'https://www.lf1.cuni.cz'},
+  'cz-masaryk-stom':{title:'Dentistry – Stomatologji (anglisht)',univ:'Masaryk University – Faculty of Medicine, Brno',duration:'5 vjet',lang:'Anglisht (C1)',req:'Dëftesë, IELTS ≥6.5, test hyrës biologji & kimi, intervistë',deadline:'Mars 15, 2026',docs:'Dëftesë apostiluar, IELTS/TOEFL, CV, letër motivimi, foto',fee:'~11 000 EUR/vit',platform:'is.muni.cz',link:'https://www.muni.cz'},
+  'cz-charles-farmaci':{title:'Pharmacy – Farmaci (anglisht)',univ:'Charles University – Faculty of Pharmacy, Hradec Králové',duration:'5 vjet',lang:'Anglisht (C1)',req:'Dëftesë, IELTS ≥7, test hyrës kimi–biologji',deadline:'Shkurt 28, 2026',docs:'Dëftesë e apostiluar, certifikatë gjuhe, CV, letër motivimi',fee:'~12 000 EUR/vit',platform:'faf.cuni.cz',link:'https://www.faf.cuni.cz'}
+};
+
+function openModal(id){
+  const p=programs[id];if(!p)return;
+  document.getElementById('modal-title').textContent=p.title;
+  document.getElementById('modal-univ').textContent=p.univ;
+  document.getElementById('modal-duration').textContent=p.duration;
+  document.getElementById('modal-lang').textContent=p.lang;
+  document.getElementById('modal-req').textContent=p.req;
+  document.getElementById('modal-deadline').textContent=p.deadline;
+  document.getElementById('modal-docs').textContent=p.docs;
+  document.getElementById('modal-fee').textContent=p.fee;
+  document.getElementById('modal-platform').textContent=p.platform;
+  document.getElementById('modal-link').href=p.link;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(e){if(e.target.id==='modal')closeModalDirect();}
+function closeModalDirect(){document.getElementById('modal').classList.remove('open');}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect();});
+</script>
+</body>
+</html>
